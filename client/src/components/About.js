@@ -2,7 +2,7 @@ const About = () => {
   return(
     <div>
       <h1 style={styles.header}>About</h1>
-      <h2 style={styles.info}>very interesting information about the apple/pear orchard</h2>
+      <h2 style={styles.info}>I have a massive orchard with both apples and pears. The apples have many worms unfortunately.</h2>
     </div>
   );
 };

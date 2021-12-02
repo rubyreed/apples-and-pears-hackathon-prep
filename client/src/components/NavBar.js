@@ -17,7 +17,7 @@ const styles = {
     border: "2px solid grey",
     margin: "10px",
     padding: "10px",
-    borderRadius: "5px",
+    borderRadius: "10px",
   },
   link:{
     fontSize: "2em",
