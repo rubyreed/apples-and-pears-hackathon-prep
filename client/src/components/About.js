@@ -2,6 +2,7 @@ const About = () => {
   return(
     <div>
       <h1 style={styles.header}>About</h1>
+      <h2 style={styles.info}>very interesting information about the apple/pear orchard</h2>
     </div>
   );
 };
@@ -9,11 +10,11 @@ const About = () => {
 const styles = {
 
   header:{
-    border: "5px solid gray",
-    margin: "5px",
-    padding: "5px",
-    backgroundColor: "purple",
-    color: "white"
+    textAlign:"center",
+    fontSize:"4em",
+  },
+  info:{
+    textAlign:"center",
   }
 };
 

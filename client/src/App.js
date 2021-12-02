@@ -4,13 +4,15 @@ import About from "./components/About";
 import Apples from './components/Apples';
 import NavBar from "./components/NavBar";
 import Apple from "./components/Apple";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div>
     <NavBar/>
     <Routes>
-      <Route path = "/" element = {<Apples />}/>
+      <Route path = "/" element = {<Home />}/>
+      <Route path = "/apples" element = {<Apples/>}/>
       <Route path = "/about" element = {<About />}/>
       <Route path = "/apples/:id" element = {<Apple/>}/>
     </Routes>

@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 const NavBar = () => {
 return (
 <div style={styles.navbar}>
-<Link style={styles.link} to='/'>Apples</Link>
+<Link style={styles.link} to='/apples'>Apples</Link>
+<Link style={styles.link} to='/'>Home</Link>
 <Link style={styles.link} to='/about'>About</Link>
 </div>
 );
@@ -19,7 +20,8 @@ const styles = {
   },
   link:{
     fontSize: "2em",
-    display: "inline-block",
+    padding: "30px",
+    textDecoration: "none"
   }
 };
 
