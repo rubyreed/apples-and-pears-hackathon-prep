@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const AppleShow = (props) => {
-  const {variety, description} = props
+const AppleShow = () => {
+
 
   const params = useParams();
-  const [props, setApple] = useState({});
+  const [apple, setApple] = useState({});
 
 useEffect(() => {
-  getApple();
-}, []);
-
+  
 const getApple = async () => {
   try {
     let response = await axios.get(`/api/apples/${params.id}`);
@@ -21,11 +19,14 @@ const getApple = async () => {
   }
 };
 
+getApple();
+}, [params]);
+
 return (
   <div>
     <p>Apple Show Here</p>
-    <p>Variety: {variety}</p>
-    <p>Description: {description}</p>
+    <p>Variety: {apple.variety}</p>
+    <p>Description: {apple.description}</p>
   </div>
 );
 };

@@ -1,15 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const Apple = (props) => {
+const Pear = (props) => {
   const {id, variety, description} = props
   return (
     <div>
       <p>Variety: {variety}</p>
       <p>Description: {description}</p>
-      <Link to={`/apples/${id}`}>View</Link>
+      <Link to={`/pears/${id}`}>View</Link>
     </div>
   )
 };
 
-export default Apple;
+export default Pear;

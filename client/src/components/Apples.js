@@ -8,7 +8,7 @@ const Apples= () => {
   const [apples, setApples] = useState([]);
 
   useEffect(() => {
-    console.log("mounted");
+    console.log("apples mounted");
     getApples();
   },[]);
 
