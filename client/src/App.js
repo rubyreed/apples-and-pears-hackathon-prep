@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import Pears from "./components/Pears";
 import AppleShow from "./components/AppleShow";
 import PearShow from "./components/PearShow";
+import Worms from "./components/Worms";
+import WormShow from "./components/WormShow";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path = "/apples/:id" element = {<AppleShow/>}/>
       <Route path = "/pears" element = {<Pears/>}/>
       <Route path = "/pears/:id" element = {<PearShow/>}/>
+      <Route path = "/apples/:id/worms" element = {<Worms/>}/>
+      <Route path = "/apples/:apple_id/worms/:id" element = {<WormShow/>}/>
     </Routes>
     </div>
   );

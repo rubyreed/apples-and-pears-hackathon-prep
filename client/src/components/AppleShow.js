@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AppleShow = () => {
 
@@ -27,6 +28,7 @@ return (
     <p>Apple Show Here</p>
     <p>Variety: {apple.variety}</p>
     <p>Description: {apple.description}</p>
+    <Link to={`/apples/${params.id}/worms`}>Worms</Link>
   </div>
 );
 };

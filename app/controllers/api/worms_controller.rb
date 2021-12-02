@@ -1,8 +1,9 @@
 class Api::WormsController < ApplicationController
-  before_action :set_worm, only: [:show, :destroy, :update]
+  before_action :set_apple
+  before_action :set_worm, only: [:show, :update, :destroy]
 
   def index
-    render json: Worm.all
+    render json: @apple.worms
   end
 
   def show
@@ -10,11 +11,11 @@ class Api::WormsController < ApplicationController
   end
 
   def create
-    @worm=Worm.new(worm_params)
+    @worm=@apple.worms.new(worm_params)
     if(@worm.save)
       render json: @worm
     else
-      render json: {errors: worm.errors}, status: :unprocessable_entity
+      render json: {errors: @worm.errors}, status: :unprocessable_entity
     end
   end
 
@@ -36,7 +37,11 @@ class Api::WormsController < ApplicationController
     params.require(:worm).permit(:species, :description)
   end
 
+  def set_apple
+    @apple = Apple.find(params[:apple_id])
+  end
+
   def set_worm
-    @worm = Worm.find(params[:id])
+    @worm = @apple.worms.find(params[:id])
   end
 end
