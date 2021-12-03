@@ -4,7 +4,7 @@ import Apple from "./Apple";
 import AppleForm from "./AppleForm";
 
 const Apples= () => {
-  
+
   const [apples, setApples] = useState([]);
 
   useEffect(() => {
@@ -22,12 +22,18 @@ const Apples= () => {
   setApples(updatedApples)
   };
 
+  const deleteApple = async (id) => {
+    let response = await axios.delete(`/api/apples/${id}`);
+    let filteredApples = apples.filter((apple) => apple.id !== id);
+    setApples(filteredApples);
+  };
+
   const renderApples = () => {
     if (apples.length === 0) {
       return <p>No Apples</p>
     }
     return apples.map((apple) => {
-      return <Apple key={apple.id}{...apple} updateApple={updateApple}/>;
+      return <Apple key={apple.id}{...apple} updateApple={updateApple} deleteApple={deleteApple}/>;
     });
   };
 

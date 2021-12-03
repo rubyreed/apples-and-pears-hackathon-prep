@@ -4,7 +4,7 @@ import PearForm from "./PearForm";
 
 const Pear = (props) => {
   const [showForm, setShowForm] = useState(false);
-  const {id, variety, description, updatePear} = props
+  const {id, variety, description, updatePear, deletePear} = props
 
 const toggleForm = () => {
   setShowForm(!showForm);
@@ -18,7 +18,8 @@ const toggleForm = () => {
       <button onClick = {toggleForm}>
         {showForm ? "Cancel" : "Update"}
       </button>
-      {showForm && <PearForm id ={id} variety = {variety} description = {description} updatePear = {updatePear}/>}
+      {showForm && <PearForm id ={id} variety = {variety} description = {description} updatePear = {updatePear} deletePear={deletePear}/>}
+    <button onClick={() => deletePear(id)}>Delete</button>
     </div>
   )
 };

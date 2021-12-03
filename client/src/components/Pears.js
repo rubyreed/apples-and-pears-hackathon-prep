@@ -22,12 +22,18 @@ const Pears= () => {
     setPears(updatedPears)
   };
 
+  const deletePear = async (id) => {
+    let response = await axios.delete(`/api/pears/${id}`);
+    let filteredPears = pears.filter((pear) => pear.id !== id);
+    setPears(filteredPears);
+  };
+
   const renderPears = () => {
     if (pears.length === 0) {
       return <p>No Pears</p>
     }
     return pears.map((pear) => {
-      return <Pear key={pear.id}{...pear} updatePear={updatePear}/>;
+      return <Pear key={pear.id}{...pear} updatePear={updatePear} deletePear={deletePear}/>;
     });
   };
 

@@ -4,7 +4,7 @@ import AppleForm from "./AppleForm";
 
 const Apple = (props) => {
   const [showForm, setShowForm] = useState(false);
-  const {id, variety, description, updateApple} = props
+  const {id, variety, description, updateApple, deleteApple} = props
 
 const toggleForm = () => {
   setShowForm(!showForm);
@@ -19,7 +19,8 @@ const toggleForm = () => {
       <button onClick ={toggleForm}>
         {showForm ? "Cancel" : "Update"}
         </button>
-      {showForm && <AppleForm id = {id} variety = {variety} description = {description} updateApple = {updateApple}/>}
+      {showForm && <AppleForm id = {id} variety = {variety} description = {description} updateApple = {updateApple} deleteApple = {deleteApple}/>}
+    <button onClick={() => deleteApple(id)}>Delete</button>
     </div>
   );
 };
