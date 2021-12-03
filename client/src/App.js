@@ -11,6 +11,7 @@ import PearShow from "./components/PearShow";
 import PearForm from "./components/PearForm";
 import Worms from "./components/Worms";
 import WormShow from "./components/WormShow";
+import WormForm from "./components/WormForm";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path = "/pears/:id/edit" element = {<PearForm />}/>
       <Route path = "/apples/:id/worms" element = {<Worms />}/>
       <Route path = "/apples/:apple_id/worms/:id" element = {<WormShow />}/>
+      <Route path = "/apples/:apple_id/worms/:id/edit" element = {<WormForm />}/>
     </Routes>
     </div>
   );

@@ -22,8 +22,13 @@ const Worms= () => {
  
     console.log("mounted");
     getWorms();
-    //params can only be here when it is not changing, good for simply projects not everything
+    //params can only be here when it is not changing, good for simple projects not everything
   },[params]);
+
+  const updateWorm = (changedWorm) => {
+    let updatedWorms = worms.map((worm) => (worm.id === changedWorm.id ? changedWorm : worm));
+  setWorms(updatedWorms)
+  };
 
   const deleteWorm = async (id) => {
     let response = await axios.delete(`/api/apples/${params.id}/worms/${id}`);
@@ -36,7 +41,7 @@ const Worms= () => {
       return <p>No Worms</p>
     }
     return worms.map((worm) => {
-      return <Worm key={worm.id}{...worm} deleteWorm={deleteWorm}/>;
+      return <Worm key={worm.id}{...worm} deleteWorm={deleteWorm} updateWorm = {updateWorm}/>;
     });
   };
 
