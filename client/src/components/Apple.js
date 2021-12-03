@@ -11,11 +11,11 @@ const toggleForm = () => {
 };
 
   return (
-    <div>
-      <p>ID:{id}</p>
+    <div style={styles.container}>
+      <p>ID: {id}</p>
       <p>Variety: {variety}</p>
       <p>Description: {description}</p>
-      <Link to={`/apples/${id}`}>View</Link>
+      <Link style = {styles.link} to={`/apples/${id}`}>View</Link>
       <button onClick ={toggleForm}>
         {showForm ? "Cancel" : "Update"}
         </button>
@@ -23,6 +23,21 @@ const toggleForm = () => {
     <button onClick={() => deleteApple(id)}>Delete</button>
     </div>
   );
+};
+
+const styles={
+  container:{
+    border: "3px red solid",
+    margin: "10px",
+    padding: "10px"
+  },
+  link: {
+    color:"black",
+    padding: "5px",
+    textDecoration: "none",
+    border: "1px red solid",
+    margin: "10px"
+  }
 };
 
 export default Apple;

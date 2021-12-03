@@ -24,12 +24,26 @@ getWorm();
 }, [params]);
 
 return (
-  <div>
-    <p>Worm Show Here</p>
+  <div style={styles.worm}>
+    <p style={styles.check}>Check out this worm!</p>
+    <p>ID: {worm.id}</p>
     <p>Species: {worm.species}</p>
     <p>Description: {worm.description}</p>
   </div>
 );
 };
+
+const styles={
+  worm:{
+    textAlign:"center",
+    textDecoration:"none",
+    border: "5px brown solid",
+    margin:"10px",
+    padding: "10px"
+  },
+  check:{
+    fontSize: "1.5em"
+  },
+}
 
 export default WormShow;

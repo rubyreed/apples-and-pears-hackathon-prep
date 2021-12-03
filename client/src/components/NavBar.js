@@ -18,9 +18,11 @@ const styles = {
     margin: "10px",
     padding: "10px",
     borderRadius: "10px",
+    backgroundColor: "lightgreen",
   },
+
   link:{
-    color:"blue",
+    color:"black",
     fontSize: "2em",
     padding: "30px",
     textDecoration: "none"

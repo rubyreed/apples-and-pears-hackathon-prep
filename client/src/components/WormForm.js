@@ -31,7 +31,7 @@ if (id) {
         <p>Description:</p>
         <input value = {descriptionState} onChange = {(e) => setDescriptionState(e.target.value)}/>
        <br/>
-        <button>{id ? "Update" : "Create"}</button>
+        <button style={styles.button}>{id ? "Update" : "Create"}</button>
       </form>
   </div>
   );
@@ -42,7 +42,10 @@ const styles = {
     border: "3px solid blue",
     margin: "5px",
     padding: "5px"
-  }
+  },
+  button: {
+    margin:"10px",
+     }
 };
 
 export default WormForm;
