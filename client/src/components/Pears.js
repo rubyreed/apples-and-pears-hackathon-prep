@@ -17,12 +17,17 @@ const Pears= () => {
     setPears(response.data)
   };
 
+  const updatePear = (changedPear) => {
+    let updatedPears = pears.map((pear) => (pear.id === changedPear.id ? changedPear : pear));
+    setPears(updatedPears)
+  };
+
   const renderPears = () => {
     if (pears.length === 0) {
       return <p>No Pears</p>
     }
     return pears.map((pear) => {
-      return <Pear key={pear.id}{...pear}/>;
+      return <Pear key={pear.id}{...pear} updatePear={updatePear}/>;
     });
   };
 

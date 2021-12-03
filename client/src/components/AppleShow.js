@@ -24,13 +24,20 @@ getApple();
 }, [params]);
 
 return (
-  <div>
-    <p>Apple Show Here</p>
+  <div style={styles.apple}>
+    <p>Check out this apple!</p>
     <p>Variety: {apple.variety}</p>
     <p>Description: {apple.description}</p>
     <Link to={`/apples/${params.id}/worms`}>Worms</Link>
   </div>
 );
+};
+
+const styles={
+  apple:{
+    textAlign:"center",
+    textDecoration:"none"
+  }
 };
 
 export default AppleShow;

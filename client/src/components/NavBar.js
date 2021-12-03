@@ -20,6 +20,7 @@ const styles = {
     borderRadius: "10px",
   },
   link:{
+    color:"blue",
     fontSize: "2em",
     padding: "30px",
     textDecoration: "none"

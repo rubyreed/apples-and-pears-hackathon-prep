@@ -8,6 +8,7 @@ import AppleForm from "./components/AppleForm";
 import NavBar from "./components/NavBar";
 import Pears from "./components/Pears";
 import PearShow from "./components/PearShow";
+import PearForm from "./components/PearForm";
 import Worms from "./components/Worms";
 import WormShow from "./components/WormShow";
 
@@ -23,6 +24,7 @@ function App() {
       <Route path = '/apples/:id/edit' element = {<AppleForm />}/>
       <Route path = "/pears" element = {<Pears />}/>
       <Route path = "/pears/:id" element = {<PearShow />}/>
+      <Route path = "/pears/:id/edit" element = {<PearForm />}/>
       <Route path = "/apples/:id/worms" element = {<Worms />}/>
       <Route path = "/apples/:apple_id/worms/:id" element = {<WormShow />}/>
     </Routes>
