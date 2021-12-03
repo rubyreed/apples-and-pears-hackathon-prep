@@ -25,13 +25,18 @@ const Worms= () => {
     //params can only be here when it is not changing, good for simply projects not everything
   },[params]);
 
+  const deleteWorm = async (id) => {
+    let response = await axios.delete(`/api/apples/${params.id}/worms/${id}`);
+    let filteredWorms = worms.filter((worm) => worm.id !== id);
+    setWorms(filteredWorms);
+  };
   
   const renderWorms = () => {
     if (worms.length === 0) {
       return <p>No Worms</p>
     }
     return worms.map((worm) => {
-      return <Worm key={worm.id}{...worm}/>;
+      return <Worm key={worm.id}{...worm} deleteWorm={deleteWorm}/>;
     });
   };
 
