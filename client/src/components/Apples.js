@@ -4,7 +4,6 @@ import Apple from "./Apple";
 import AppleForm from "./AppleForm";
 
 const Apples= () => {
-
   const [apples, setApples] = useState([]);
 
   useEffect(() => {
@@ -17,12 +16,17 @@ const Apples= () => {
     setApples(response.data)
   };
 
+  const updateApple = (changedApple) => {
+    let updatedApples = apples.map((apple) => (apple.id === changedApple.id ? changedApple : apple));
+  setApples(updatedApples)
+  };
+
   const renderApples = () => {
     if (apples.length === 0) {
       return <p>No Apples</p>
     }
     return apples.map((apple) => {
-      return <Apple key={apple.id}{...apple}/>;
+      return <Apple key={apple.id}{...apple} updateApple={updateApple}/>;
     });
   };
 
